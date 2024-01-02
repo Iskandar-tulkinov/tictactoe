@@ -3,12 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project</title>
+  <title>TicTacToe | FrontEnd Mentor Challange</title>
 
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
+  <main class="main">
+    <!-- Game menu -->
+    <section class="game-menu">
+      <img src="./assets/img/logo.svg" alt="TicTacToe logo">
+      <div class="choose-mark">
+        <h2>Pick player 1's mark</h2>
+        <div class="mark-container">
+          <label class="labels" for="X-mark">
+            <input class="radio" type="radio" name="marks" id="X-mark" value="X" checked>
+              <span class="checkmark">
+                <img class="X-svg" src="./assets/img/icon-x.svg" alt="">
+              </span>
+          </label>
+          <label class="labels" for="O-mark">
+            <input class="radio" type="radio" name="marks" id="O-mark" value="Y" >
+              <span class="checkmark">
+                <img class="O-svg" src="./assets/img/icon-o.svg" alt="">
+              </span>
+          </label>
+        </div>
+        <p class="">REMEMBER: X GOES FIRST</p>
+      </div>
+      <button id="cpu-btn" data-value="">New Game (vs CPU)</button>
+      <button id="player-btn" data-value="">New Game (vs player)</button>
+    </section>
+
+    <!-- Game board -->
+    <section class="game-board">
+      <div class="game-board__header">
+        <img src="./assets/img/logo.svg" alt="logo" class="game-board__header-img">
+        <div class="turn">
+          <img id="turn__img" src="./assets/img/icon-x-turn.svg" alt="X icon" data-value="X">
+          <p class="turn__text">turn</p>
+        </div>
+        <button class="restart" >
+          <img src="./assets/img/icon-restart.svg" alt="">
+        </button>
+      </div>
+
+      <!-- BOXES -->
+      <div class="boxes">
+        <div class="box box0" id="0" data-value=""></div>
+        <div class="box box1" id="1" data-value=""></div>
+        <div class="box box2" id="2" data-value=""></div>
+        <div class="box box3" id="3" data-value=""></div>
+        <div class="box box4" id="4" data-value=""></div>
+        <div class="box box5" id="5" data-value=""></div>
+        <div class="box box6" id="6" data-value=""></div>
+        <div class="box box7" id="7" data-value=""></div>
+        <div class="box box8" id="8" data-value=""></div>
+      </div>
+
+      <!-- SCORES -->
+      <div class="scores">
+        <div class="score-box your-score">
+          <p id="player1-name">X (You)</p>
+          <p class="Xscore">0</p>
+        </div>
+        <div class="score-box ties">
+          <p>Ties</p><br>
+          <span id="draw">0</span>
+        </div>
+        <div class="score-box cpu-score">
+          <p id="player2-name">O (cpu)</p>
+          <p id="O-score">0</p>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div id="modal" class="modal">
+        <div id="end-game-modal" class="end-game-modal">
+          <p id="winner-name">Oh no, you lost...</p>
+          <div class="">
+            <img id="winner-mark" src="./assets/img/icon-o.svg" alt="winner-mark">
+            <h2 id="winner-takes">takes the round</h2>
+          </div>
+
+          <div class="">
+            <button class="quit-btn">Quit</button>
+            <button class="next-btn">Next round</button>
+          </div>
+
+        </div>
+        <div class="restart-game">
+          <p class="restart-game__text">restart game?</p>
+          <div>
+            <button>No, cancel</button>
+            <button>Yes, restart</button>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <section class="cpu-thinks">
+      <p id="cpu-thinks-message"></p>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/Iskandar-tulkinov/" target="_blank">Iskandar</a>.
+</footer>
 
   <script src="js/script.js"></script>
 </body>

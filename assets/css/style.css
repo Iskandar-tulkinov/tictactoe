@@ -85,6 +85,13 @@ select:-webkit-autofill:focus {
   flex-grow: 1;
 }
 
+
+/* Xmark */
+.X-svg path{
+  fill: #31C3BD;
+  color: #31C3BD;
+  stroke: #31C3BD;
+}
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (   min--moz-device-pixel-ratio: 2),
