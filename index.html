@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TicTacToe | FrontEnd Mentor Challange</title>
 
+  <link rel="stylesheet" href="./assets/css/variable.css">
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -12,53 +13,55 @@
   <main class="main">
     <!-- Game menu -->
     <section class="game-menu">
-      <img src="./assets/img/logo.svg" alt="TicTacToe logo">
-      <div class="choose-mark">
-        <h2>Pick player 1's mark</h2>
-        <div class="mark-container">
+      <!-- Logo -->
+      <img class="logo" src="./assets/img/logo.svg" alt="TicTacToe logo">
+      <div class="choose-mark flex">
+        <h2 class=" fs-600">Pick player 1's mark</h2>
+        <div class="mark-container flex">
           <label class="labels" for="X-mark">
             <input class="radio" type="radio" name="marks" id="X-mark" value="X" checked>
               <span class="checkmark">
-                <img class="X-svg" src="./assets/img/icon-x.svg" alt="">
-              </span>
+                <svg class="X-svg" width="64" height="64" xmlns="http://www.w3.org/2000/svg"><path class="       X-svg-path" d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="hsl( var(--clr-silver) )"/>
+                </svg>
           </label>
           <label class="labels" for="O-mark">
             <input class="radio" type="radio" name="marks" id="O-mark" value="Y" >
               <span class="checkmark">
-                <img class="O-svg" src="./assets/img/icon-o.svg" alt="">
+                <svg class="O-svg" width="64" height="64" xmlns="http://www.w3.org/2000/svg"><path class="O-svg-path" d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" fill="hsl( var(--clr-silver) )"/>
+                </svg>
               </span>
           </label>
         </div>
-        <p class="">REMEMBER: X GOES FIRST</p>
+        <p class="reminder">REMEMBER: X GOES FIRST</p>
       </div>
-      <button id="cpu-btn" data-value="">New Game (vs CPU)</button>
-      <button id="player-btn" data-value="">New Game (vs player)</button>
+      <button id="ai-btn" data-value="">New Game (vs ai)</button>
+      <button id="player-btn" data-value="">New Game (vs your friend)</button>
     </section>
 
     <!-- Game board -->
     <section class="game-board">
-      <div class="game-board__header">
-        <img src="./assets/img/logo.svg" alt="logo" class="game-board__header-img">
+      <div class="game-board__header flex">
+        <img src="./assets/img/logo.svg" alt="logo" class="game-board__header-logo">
         <div class="turn">
           <img id="turn__img" src="./assets/img/icon-x-turn.svg" alt="X icon" data-value="X">
           <p class="turn__text">turn</p>
         </div>
-        <button class="restart" >
+        <button class="restart-btn" >
           <img src="./assets/img/icon-restart.svg" alt="">
         </button>
       </div>
 
       <!-- BOXES -->
       <div class="boxes">
-        <div class="box box0" id="0" data-value=""></div>
-        <div class="box box1" id="1" data-value=""></div>
-        <div class="box box2" id="2" data-value=""></div>
-        <div class="box box3" id="3" data-value=""></div>
-        <div class="box box4" id="4" data-value=""></div>
-        <div class="box box5" id="5" data-value=""></div>
-        <div class="box box6" id="6" data-value=""></div>
-        <div class="box box7" id="7" data-value=""></div>
-        <div class="box box8" id="8" data-value=""></div>
+        <div class="box box0 hover-class-X" id="0" data-value=""></div>
+        <div class="box box1 hover-class-X" id="1" data-value=""></div>
+        <div class="box box2 hover-class-X" id="2" data-value=""></div>
+        <div class="box box3 hover-class-X" id="3" data-value=""></div>
+        <div class="box box4 hover-class-X" id="4" data-value=""></div>
+        <div class="box box5 hover-class-X" id="5" data-value=""></div>
+        <div class="box box6 hover-class-X" id="6" data-value=""></div>
+        <div class="box box7 hover-class-X" id="7" data-value=""></div>
+        <div class="box box8  hover-class-X" id="8" data-value=""></div>
       </div>
 
       <!-- SCORES -->
@@ -71,8 +74,8 @@
           <p>Ties</p><br>
           <span id="draw">0</span>
         </div>
-        <div class="score-box cpu-score">
-          <p id="player2-name">O (cpu)</p>
+        <div class="score-box ai-score">
+          <p id="player2-name">O (ai)</p>
           <p id="O-score">0</p>
         </div>
       </div>
@@ -104,8 +107,8 @@
 
     </section>
 
-    <section class="cpu-thinks">
-      <p id="cpu-thinks-message"></p>
+    <section class="ai-thinks">
+      <p id="ai-thinks-message"></p>
     </section>
   </main>
 

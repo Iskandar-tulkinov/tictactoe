@@ -1,0 +1,19 @@
+
+:root {
+  /* colors */
+  --clr-lightBlue: 178 60% 48%;
+  --clr-lightBlueHover: 178 75% 65%;
+  --clr-orange: 39 88% 58%;
+  --clr-orangeHover: 39 100% 69%;
+  --clr-darkNavy: 202 32% 15%;
+  --clr-navy: 199 35% 19%;
+  --clr-silver: 198 23% 72%;
+  --clr-silverHover: 197 33% 89%;
+
+  /* font-sizes */
+  --text-900: 1.5rem;
+  --text-800: 1.25rem;
+  --text-700: 1rem;
+  --text-600: 1rem;
+  --text-500: 0.875rem;
+}
